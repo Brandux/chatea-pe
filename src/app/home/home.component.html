@@ -4,14 +4,18 @@ el usuario, es utilizado para poder agregar dos
 <br>
 <b>Amigos</b>
 <ng-container *ngFor="let user of friends; let i = index ">
-<p *ngIf="user.friend" >
-  {{ i + 1 }} , {{ user.nick }} - {{ user.email }}  
-</p>
+  <div *ngIf="user.friend">
+    <a routerLink="/conversation/{{ user.uid }}" >
+      {{ i + 1 }} , {{ user.nick }} - {{ user.email }}  
+    </a>
+  </div>
 </ng-container>
 
 <b>No Amigos</b>
 <ng-container *ngFor="let user of friends; let i = index "> 
-<p *ngIf="!user.friend" >
-  {{ i + 1 }} , {{ user.nick }} - {{ user.email }}  
-</p>
+  <div *ngIf="!user.friend">
+    <a  >
+      {{ i + 1 }} , {{ user.nick }} - {{ user.email }}  
+    </a>
+  </div>
 </ng-container>
