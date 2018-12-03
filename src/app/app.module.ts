@@ -9,6 +9,8 @@ import { ConversationComponent } from './conversation/conversation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { SearchPipe } from './pipes/search';
+import {FormsModule} from '@angular/forms';
 
 // Esta constante esta referenciando a los modulos que seran accedidos mediante la URL
 // http://localhost:4000/home/
@@ -27,12 +29,14 @@ const appRoute: Routes = [
     HomeComponent,
     ConversationComponent,
     ProfileComponent,
-    MenuComponent
+    MenuComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoute) /* <- importamos la ruta de los modulos  */
+    RouterModule.forRoot(appRoute), /* <- importamos la ruta de los modulos  */
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'search'
+    name: 'search' // --- este es el nombre con que se implementa en el html
 })
 export class SearchPipe implements PipeTransform {
-    public transform(value: any, args: string): any {
+    public transform(value, args: string) {
         if (!value) {
             return;
         }
@@ -12,8 +12,8 @@ export class SearchPipe implements PipeTransform {
             return value;
         }
         args = args.toLowerCase();
-        return value.filter(item => {
-            return JSON.stringify(item).toLowerCase();
+        return value.filter((item) => {
+            return JSON.stringify(item).toLowerCase().includes(args);
         });
     }
 }

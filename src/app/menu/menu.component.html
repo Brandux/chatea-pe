@@ -1,3 +1,9 @@
-<a routerLink="/home">home</a> |
-<a routerLink="/login">login</a> |
-<a routerLink="/profile">profile</a> |
+<div id="menuContainer">
+    <div class="item branding" [routerLink]="['/login']" >
+       <img id="main-logo" src="assets/img/logo_live.png" alt="Logo de Chatea-PE"> 
+       Chatea-PE
+    </div>
+    <div class="item" [routerLink]="['/profile']" routerLinkActive="router-link-active" >
+        Profile
+    </div>
+</div>
